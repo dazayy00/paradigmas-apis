@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<title>SUPERHERO RANDOM</title>
+<body>
+
+<h1>SUPERHERO API</h1><br>
+<h2>Instrucciones:</h2>
+<h3>Ingresa un número random entre 1 y 731 </h3>
+<h3>para saber qué superhéroe o villano eres!</h3>
+
+<label>Ingresa el número:</label><br>
+<input type="text" id="characterID" placeholder="1-731"><br>
+
+<button onclick="getSuperhero()" data-api-function="SuperHeroAPIFetch">SuperHero Api (Fetch)</button>
+<button onclick="getSuperhero()" data-api-function="SuperHeroAPIHttp">SuperHero Api (HttpRequest)</button>
+
+<div id="resultado"></div>
+
+<script src="shapi.js"></script>
+<link rel="stylesheet" href="shapi.css">
+
+</body>
+</html>
+

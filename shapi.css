@@ -1,0 +1,79 @@
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  color: #333;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+#resultado {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+th {
+  text-align: left;
+}
+
+body {
+  background-color: #f7f7f7;
+}
+
+h1, h2 {
+  color: #e74c3c; /* Rojo Marvel */
+}
+
+#resultado {
+  background-color: #fff;
+}
+
+table th {
+  background-color: #e74c3c; /* Rojo Marvel */
+  color: #fff;
+}
+
+table td {
+  background-color: #f7f7f7;
+}
+
+#logo-marvel {
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+#logo-dc {
+  float: right;
+  width: 100px;
+  height: 100px;
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+  #logo-marvel, #logo-dc {
+    display: block;
+    margin: 0 auto;
+  }
+}
