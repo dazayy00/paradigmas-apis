@@ -55,10 +55,12 @@ function displaySuperhero(data) {
   const powerstats = data.powerstats;
   const appearance = data.appearance;
   const biography = data.biography;
+  const imageUrl = data.image; 
 
   let result = `<h2>${name}</h2>`;
 
   result += `<table>
+    <tr><th>Imagen:</th><td><img src="${imageUrl}"></td></tr>
     <tr><th>Powerstats:</th><td>`;
   for (const key in powerstats) {
     result += `${key}: ${powerstats[key]}, `;
