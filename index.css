@@ -1,18 +1,12 @@
 body {
-  background-color: #aa77c3; 
+  background-color: #b97d10; 
 }
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #aa77c3; 
-  }
-}
-
 
 h1, h2, h3 {
   font-family: Arial, sans-serif; 
   font-weight: bold; 
   text-align: center; 
+  color: #6a0c0b;
 }
 
 h1, h2, h3 {
@@ -40,4 +34,5 @@ a:hover {
 button {
   display: block;
   margin: 0 auto;
+  color: #f7d281;
 }

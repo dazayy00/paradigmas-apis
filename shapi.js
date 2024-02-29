@@ -25,7 +25,18 @@ async function SuperHeroAPIFetch(characterId) {
   }
 
   const data = await response.json();
+
+  const image = document.createElement("img");
+
+  image.src = data.image.url;
+
+  image.alt = "Cargando imagen...";
+
+  document.getElementById("resultado").appendChild(image);
+
   displaySuperhero(data);
+  console.log(data);
+  console.log(data.image.url);
 }
 
 function SuperHeroAPIHttp(characterId) {
@@ -38,7 +49,18 @@ function SuperHeroAPIHttp(characterId) {
   request.onload = function () {
     if (request.status >= 200 && request.status < 300) {
       const data = JSON.parse(request.responseText);
+
+      const image = document.createElement("img");
+
+      image.src = data.image.url;
+
+      image.alt = "Cargando imagen...";
+
+      document.getElementById("resultado").appendChild(image);
+
       displaySuperhero(data);
+      console.log(data);
+      console.log(data.image.url);
     } else {
       alert("Error al buscar el superhéroe: " + request.statusText);
     }
@@ -50,33 +72,60 @@ function SuperHeroAPIHttp(characterId) {
   request.send();
 }
 
+function SuperHeroJquery(characterId) {
+  const apiKey = "357848050455796";
+  const url = `https://www.superheroapi.com/api.php/${apiKey}/${characterId}`;
+
+  $.ajax({
+    url: url,
+    dataType: 'json',
+    success: function(data) {
+      const image = document.createElement("img");
+      image.src = data.image.url;
+      image.alt = "Cargando imagen...";
+      document.getElementById("resultado").appendChild(image);
+      displaySuperhero(data);
+    },
+    error: function(error) {
+      alert("Error al buscar el superhéroe: " + error.statusText);
+    }
+  });
+}
+
+function SuperHeroRandom(characterId) {
+
+  const randomId = Math.floor(Math.random() * 731) + 1;
+
+  SuperHeroJquery(randomId);
+}
+
+
 function displaySuperhero(data) {
   const name = data.name;
-  const powerstats = data.powerstats;
   const appearance = data.appearance;
   const biography = data.biography;
-  const imageUrl = data.image; 
 
   let result = `<h2>${name}</h2>`;
 
-  result += `<table>
-    <tr><th>Imagen:</th><td><img src="${imageUrl}"></td></tr>
-    <tr><th>Powerstats:</th><td>`;
-  for (const key in powerstats) {
-    result += `${key}: ${powerstats[key]}, `;
-  }
-  result += `</td></tr>
-    <tr><th>Apariencia:</th><td>`;
+  result += `<table>`;
+
+  result += `<tr><th>Imagen:</th><td>`;
+  result += `<img src="${data.image.url}" alt="${name}">`;
+  result += `</td></tr>`;
+
+  result += `<tr><th>Apariencia:</th><td>`;
   for (const key in appearance) {
     result += `${key}: ${appearance[key]}, `;
   }
-  result += `</td></tr>
-    <tr><th>Biografía:</th><td>`;
+  result += `</td></tr>`;
+
+  result += `<tr><th>Biografía:</th><td>`;
   for (const key in biography) {
     result += `${key}: ${biography[key]}, `;
   }
-  result += `</td></tr>
-  </table>`;
+  result += `</td></tr>`;
+
+  result += `</table>`;
 
   document.getElementById("resultado").innerHTML = result;
 }

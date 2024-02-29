@@ -4,7 +4,7 @@ body {
   color: #333;
 }
 
-h1, h2 {
+h1, h2, h3 {
   text-align: center;
 }
 
@@ -37,11 +37,11 @@ th {
 }
 
 body {
-  background-color: #f7f7f7;
+  background-color: #f7d281;
 }
 
-h1, h2 {
-  color: #e74c3c; /* Rojo Marvel */
+h1, h2, h3 {
+  color: #e74c3c;
 }
 
 #resultado {
@@ -49,7 +49,7 @@ h1, h2 {
 }
 
 table th {
-  background-color: #e74c3c; /* Rojo Marvel */
+  background-color: #e74c3c;
   color: #fff;
 }
 
@@ -57,23 +57,8 @@ table td {
   background-color: #f7f7f7;
 }
 
-#logo-marvel {
-  float: left;
-  width: 100px;
-  height: 100px;
-  margin-right: 10px;
-}
-
-#logo-dc {
-  float: right;
-  width: 100px;
-  height: 100px;
-  margin-left: 10px;
-}
-
-@media (max-width: 768px) {
-  #logo-marvel, #logo-dc {
-    display: block;
-    margin: 0 auto;
-  }
+#resultado img {
+  max-width: 250px; 
+  max-height: 250px; 
+  margin: auto;
 }
